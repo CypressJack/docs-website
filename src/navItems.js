@@ -1,4 +1,4 @@
-export const navigation = [
+export const mainNav = [
   {
     title: 'Guides',
     links: [
@@ -19,6 +19,21 @@ export const navigation = [
       { title: 'Messages', href: '/messages' },
       { title: 'Groups', href: '/groups' },
       { title: 'Attachments', href: '/attachments' },
+    ],
+  },
+]
+
+export const snippetsNav = [
+  {
+    title: 'Wordpress',
+    links: [
+      { title: 'Logging', href: '/snippets/wordpress/logging' },
+    ],
+  },
+  {
+    title: 'Google Analytics',
+    links: [
+      { title: 'eCommerce', href: '/snippets/googleAnalytics/eCommerce' },
     ],
   },
 ]
