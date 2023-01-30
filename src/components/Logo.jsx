@@ -12,7 +12,7 @@ export function Logo(props) {
       <span
         className="text-zinc-900 dark:text-white font-semibold"
       >
-        Wade's Docs
+        Wade&apos;s Docs
       </span>
     </div>
   )
