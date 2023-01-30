@@ -10,7 +10,7 @@ import { useSectionStore } from '@/components/SectionProvider'
 import { Tag } from '@/components/Tag'
 import { remToPx } from '@/lib/remToPx'
 
-import { navigation } from '@/navItems'
+import { mainNav, snippetsNav } from '@/navItems';
 
 function useInitialValue(value, condition = true) {
   let initialValue = useRef(value).current
@@ -185,13 +185,15 @@ function NavigationGroup({ group, className }) {
   )
 }
 
-export function Navigation(props) {
+export function Navigation({className}) {
+  const router = useRouter();
+  const navigation = router.pathname.includes('/snippets') ? snippetsNav : mainNav;
   return (
-    <nav {...props}>
+    <nav className={className}>
       <ul role="list">
         <TopLevelNavItem href="/">API</TopLevelNavItem>
         <TopLevelNavItem href="#">Documentation</TopLevelNavItem>
-        <TopLevelNavItem href="#">Support</TopLevelNavItem>
+        <TopLevelNavItem href="/snippets">Snippets</TopLevelNavItem>
         {navigation.map((group, groupIndex) => (
           <NavigationGroup
             key={group.title}

@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 import { Transition } from '@headlessui/react'
 
 import { Button } from '@/components/Button'
-import { navigation } from '@/navItems'
+import { mainNav, snippetsNav } from '@/navItems'
 
 function CheckIcon(props) {
   return (
@@ -125,7 +125,7 @@ function PageLink({ label, page, previous = false }) {
 
 function PageNavigation() {
   let router = useRouter()
-  let allPages = navigation.flatMap((group) => group.links)
+  let allPages = mainNav.flatMap((group) => group.links)
   let currentPageIndex = allPages.findIndex(
     (page) => page.href === router.pathname
   )
