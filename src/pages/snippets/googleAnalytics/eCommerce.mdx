@@ -1,0 +1,94 @@
+# eCommerce
+## Events
+```javascript {{ title: 'Purchase Event' }}
+gtag('event', 'purchase', {
+  currency: 'USD', // required
+  transaction_id: 'T_12345', // required
+  value: 25.42, // required
+  tax: 4.9,
+  shipping: 5.99,
+  coupon: 'SUMMER_SALE',
+  items: [ // required
+    {
+      item_id: 'SKU_12345', // required
+      item_name: 'Stan and Friends Tee', // required
+      price: 9.99,
+      affiliation: 'Google Merchandise Store',
+      coupon: 'SUMMER_FUN',
+      discount: 2.22,
+      index: 0,
+      item_brand: 'Google',
+      item_category: 'Apparel',
+      item_category2: 'Adult',
+      item_category3: 'Shirts',
+      item_category4: 'Crew',
+      item_category5: 'Short sleeve',
+      item_list_id: 'related_products',
+      item_list_name: 'Related Products',
+      item_variant: 'green',
+      location_id: 'ChIJIQBpAG2ahYAR_6128GcTUEo',
+      quantity: 1,
+    },
+    // more items
+  ],
+})
+```
+
+```javascript {{ title: 'Begin Checkout' }}
+gtag("event", "begin_checkout", {
+  currency: "USD", // required
+  value: 7.77, // required
+  coupon: "SUMMER_FUN",
+  items: [ // required
+    {
+      item_id: "SKU_12345", // required
+      item_name: "Stan and Friends Tee", required
+      affiliation: "Google Merchandise Store",
+      coupon: "SUMMER_FUN",
+      discount: 2.22,
+      index: 0,
+      item_brand: "Google",
+      item_category: "Apparel",
+      item_category2: "Adult",
+      item_category3: "Shirts",
+      item_category4: "Crew",
+      item_category5: "Short sleeve",
+      item_list_id: "related_products",
+      item_list_name: "Related Products",
+      item_variant: "green",
+      location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo",
+      price: 9.99,
+      quantity: 1
+    }
+  ]
+});
+```
+
+```javascript {{ title: 'View Item' }}
+gtag("event", "view_item", {
+  currency: "CAD", // required
+  value: 7.77, // required
+  items: [ // required
+    {
+      item_id: "SKU_12345", // required
+      item_name: "Stan and Friends Tee", // required
+      affiliation: "Google Merchandise Store",
+      coupon: "SUMMER_FUN",
+      discount: 2.22,
+      index: 0,
+      item_brand: "Google",
+      item_category: "Apparel",
+      item_category2: "Adult",
+      item_category3: "Shirts",
+      item_category4: "Crew",
+      item_category5: "Short sleeve",
+      item_list_id: "related_products",
+      item_list_name: "Related Products",
+      item_variant: "green",
+      location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo",
+      price: 9.99,
+      quantity: 1
+    }
+  ]
+});
+```

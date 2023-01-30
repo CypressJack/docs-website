@@ -1,0 +1,23 @@
+## Helpers
+
+## Pretty Print Array/Object
+Prints an array or object to the script with readable formatting.
+
+```php
+echo '<pre>';
+print_r($arr);
+echo '</pre>';
+```
+
+Wrapped in a function for convienence:
+
+```php
+if (!function_exists('pretty_print')) {
+  function pretty_print($arr)
+  {
+    echo '<pre>';
+    print_r($arr);
+    echo '</pre>';
+  }
+}
+```

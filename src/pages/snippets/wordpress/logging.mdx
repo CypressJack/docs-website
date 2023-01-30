@@ -1,0 +1,34 @@
+# Logging
+
+```php {{ title: 'Pretty Print Array/Object' }}
+// functions.php
+if (!function_exists('pretty_print')) {
+  function pretty_print($arr)
+  {
+    echo '<pre>';
+    print_r($arr);
+    echo '</pre>';
+  }
+}
+```
+
+```php {{ title: 'Add Debug Log' }}
+// wp-config.php
+define( 'WP_DEBUG', TRUE );
+define( 'WP_DEBUG_DISPLAY', FALSE );
+define( 'WP_DEBUG_LOG', TRUE );
+```
+
+```php {{ title: 'Write to Custom Log File' }}
+// functions.php
+if (!function_exists('write_log')) {
+  function write_log($log)
+  {
+    if (is_array($log) || is_object($log)) {
+      error_log(print_r($log, true));
+    } else {
+      error_log($log);
+    }
+  }
+}
+```
